@@ -14,22 +14,19 @@ namespace DOSCommandLine
             //Configure the appereance of the program.
             #region InitialConfigs
             Console.Clear();
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             #endregion
 
             //Shows the advices to start the program.
             #region Warnings
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.WriteLine("*****Before start be certainly to be using a VPN and a VPS*****");
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("*****Before start be certainly to be using a VPN and a VPS*****\n####I'M NOT RESPONSIBLE FOR YOUR ACTIONS####");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             #endregion
 
             //Asks if the user wants the command line execution or the "normal one".
 
-            Console.WriteLine("Command Line or Normal One?(cl/no)");
+            Console.WriteLine("Command Line, Normal One or example?(cl/no/ex)");
             string answer = Console.ReadLine();
 
             if(answer.ToLower() == "no")
@@ -39,6 +36,11 @@ namespace DOSCommandLine
             else if(answer.ToLower() == "cl")
             {
                 //CommandLine cl = new CommandLine();
+                Application.Exit();
+            }
+            else if(answer.ToLower() == "ex")
+            {
+                IFunctions.StartDOS("127.0.0.1");
             }
             else
             {
