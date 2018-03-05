@@ -35,8 +35,13 @@ namespace DOSCommandLine
             }
             else if(answer.ToLower() == "cl")
             {
-                //CommandLine cl = new CommandLine();
-                Application.Exit();
+                Console.WriteLine("To make a DOS attack: 'attack [time] [victim's ip]'");
+                while (true)
+                {
+                    Console.Write("#> ");
+                    string cmd = Console.ReadLine();
+                    CommandLine.StartCommandLine(cmd);
+                }
             }
             else if(answer.ToLower() == "ex")
             {
